@@ -78,6 +78,7 @@ export class NegociacaoController {
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociação adicionada com sucesso');
+        alert('SUCESSO MULEKE DOIDO ESTUDE MAIS')
     }
 }
 
