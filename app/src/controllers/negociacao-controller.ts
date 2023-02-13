@@ -7,6 +7,7 @@ import { Negociacao } from '../models/negociacao.js';
 import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
+import { imprimir } from '../utils/imprimir.js';
 
 export class NegociacaoController {
 
@@ -46,8 +47,7 @@ export class NegociacaoController {
         }
 
         this.negociacoes.adiciona(negociacao);
-        console.log(negociacao.paraTexto());
-        console.log(this.negociacoes.paraTexto());
+        imprimir(negociacao, this.negociacoes);
         this.limparFormulario();
         this.atualizaView();
     }
@@ -78,7 +78,6 @@ export class NegociacaoController {
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociação adicionada com sucesso');
-        alert('SUCESSO MULEKE DOIDO ESTUDE MAIS')
     }
 }
 
